@@ -1,6 +1,10 @@
 package com.bai.retrofittextapplication.config;
 
-import com.bai.retrofittextapplication.bean.TestBean;
+
+import com.qcsoft.baselibrary.bean.TestBean;
+import com.qcsoft.baselibrary.bean.TokenBean;
+
+import java.util.Map;
 
 import io.reactivex.Flowable;
 import retrofit2.http.Field;
@@ -22,5 +26,8 @@ public interface API {
     @POST(http)
     Flowable<TestBean> Test_post(@Field("sss")String sss);
 
+    //获取token
+    @POST("jwt/generateAppToken")
+    Flowable<TokenBean> getToken();
 
 }
